@@ -59,15 +59,6 @@ public class MidTerm {
 
 	public int[] twoSum(int[] nums, int target) {
 
-		/*
-		 * int[] indices=new int[2]; HashMap<Integer, int[]> hm=new
-		 * HashMap<Integer,int[]>();
-		 * 
-		 * for(int i=0;i<nums.length-1;i++){ for(int j=i+1;j<nums.length;j++){
-		 * indices[0]=i; indices[1]=j; hm.put(nums[i]+nums[j], indices); } }
-		 * return hm.get(target);
-		 */
-
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		int[] indices = new int[2];
 		for (int i = 0; i < nums.length; i++) {
