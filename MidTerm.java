@@ -20,8 +20,10 @@ public class MidTerm {
 	}
 
 	public static String generateStrings(String s1, String s2) {
+		if(s1.length()==0||s2.length()==0||s1==null||s2==null){
+			return null;
+		}
 		String str = "";
-
 		for (int i = 0; i < s1.length(); i++) {
 			for (int j = 0; j < s2.length(); j++) {
 				String combination = Character.toString(s1.charAt(i)) + Character.toString(s2.charAt(j));
@@ -35,6 +37,7 @@ public class MidTerm {
 	}
 
 	public static int singleNumber(int[] nums) {
+		if(nums.length==0) return -1;
 		int missingLocation = 0;
 		ArrayList<Integer> location = new ArrayList<Integer>();
 		for (int i = 0; i < nums.length - 1; i++) {
@@ -78,6 +81,7 @@ public class MidTerm {
 	}
 
 	public List<Integer> getRow(int rowIndex) {
+		if(rowIndex<1) return null;
 		List<ArrayList<Integer>> triangle = new ArrayList<ArrayList<Integer>>();
 		for (int i = 1; i <= rowIndex; i++) {
 			ArrayList<Integer> row = new ArrayList<Integer>();
@@ -111,6 +115,7 @@ public class MidTerm {
 		System.out.println("Generate String: " + generateStrings(s1, s2));
 
 		int[] nums = { 2, 2, 5, 4, 5, 6, 4 };
+	
 		System.out.println("Single number: " + singleNumber(nums));
 
 		int[] nums2 = { 2, 7, 11, 15 };
