@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MidTerm {
 
-	public static void reverse(ArrayList<Integer> list) {
+	public static <E> void reverse(ArrayList<E> list) {
 		int origSize = list.size();
 		for (int i = origSize - 1; i >= 0; i--) {
 			list.add(list.get(i));
@@ -65,13 +65,14 @@ public class MidTerm {
 			if (!map.containsKey(nums[i])) {
 				map.put(nums[i], i);
 			}
+		}
+		for (int i = 0; i < nums.length; i++) {
 			int another = target - nums[i];
 			if (map.containsKey(another)) {
 				indices[0] = map.get(nums[i]);
 				indices[1] = map.get(another);
 				break;
 			}
-
 		}
 		return indices;
 	}
@@ -115,6 +116,8 @@ public class MidTerm {
 		int[] nums2 = { 2, 7, 11, 15 };
 		System.out.println("indices: [" + md.twoSum(nums2, 9)[0] + " " + md.twoSum(nums2, 9)[1] + "]");
 
+		System.out.println("1st row of Pascal's triangle: " + md.getRow(1));
+		System.out.println("2nd row of Pascal's triangle: " + md.getRow(2));
 		System.out.println("3th row of Pascal's triangle: " + md.getRow(3));
 		System.out.println("4th row of Pascal's triangle: " + md.getRow(4));
 
