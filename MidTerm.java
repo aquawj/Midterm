@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MidTerm {
 
-	public static <E> void reverse(ArrayList<E> list) {
+	public static <E> void reverse(ArrayList<E> list) {          //correct
 		int origSize = list.size();
 		for (int i = origSize - 1; i >= 0; i--) {
 			list.add(list.get(i));
@@ -19,7 +19,7 @@ public class MidTerm {
 		System.out.println("");
 	}
 
-	public static String generateStrings(String s1, String s2) {
+	public static String generateStrings(String s1, String s2) {               //correct
 		if(s1.length()==0||s2.length()==0||s1==null||s2==null){
 			return null;
 		}
@@ -36,7 +36,7 @@ public class MidTerm {
 		return str;
 	}
 
-	public static int singleNumber(int[] nums) {
+	public static int singleNumber(int[] nums) {                    //wrong(-3):if nums={2,2,1}, your output is 2, but the answer is 1
 		if(nums.length==0) return -1;
 		int missingLocation = 0;
 		ArrayList<Integer> location = new ArrayList<Integer>();
@@ -60,8 +60,7 @@ public class MidTerm {
 		return nums[missingLocation];
 	}
 
-	public int[] twoSum(int[] nums, int target) {
-
+	public int[] twoSum(int[] nums, int target) {            //wrong(-3): if nums={3,2,4}, target is 6, your output is {0,0}, but the answer is {1,2}
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		int[] indices = new int[2];
 		for (int i = 0; i < nums.length; i++) {
@@ -80,7 +79,7 @@ public class MidTerm {
 		return indices;
 	}
 
-	public List<Integer> getRow(int rowIndex) {
+	public List<Integer> getRow(int rowIndex) {                     //wrong, if input is 1, your output is <1>, but the answer is <1,1>
 		if(rowIndex<1) return null;
 		List<ArrayList<Integer>> triangle = new ArrayList<ArrayList<Integer>>();
 		for (int i = 1; i <= rowIndex; i++) {
